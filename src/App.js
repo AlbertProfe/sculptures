@@ -1,25 +1,38 @@
+import SculpturesPage from "./SculpturesPage";
+import SculptureAdd from "./SculpturesAdd";
+import SculptureRemove from "./SculpturesRemove";
 import { useState } from "react";
-import { sculptureList } from "./data.js";
 
-export default function Gallery() {
-  const [index, setIndex] = useState(0);
+export default function App() {
+  const [currentPage, setCurrentPage] = useState("sculpture-page");
 
-  function handleClick() {
-    setIndex(index + 1);
-  }
+  const dispatcherPage = () => {
+    switch (currentPage) {
+      case "sculpture-page":
+        return <SculpturesPage />;
+      case "sculpture-add":
+        return <SculptureAdd />;
+      case "sculpture-remove":
+        return <SculptureRemove />;
 
-  let sculpture = sculptureList[index];
+      default:
+        return <div>Select a page</div>;
+    }
+  };
+
   return (
     <>
-      <button onClick={handleClick}>Next</button>({index + 1} of{" "}
-      {sculptureList.length})
-      <h2>
-        <i>{sculptureList[index].name} </i>
-        by {sculptureList[index].artist}
-      </h2>
-      <p>{sculptureList[index].year}</p>
-      <img src={sculpture.url} alt={sculpture.alt} />
-      <p>{sculpture.description}</p>
+      <h1>Sculptures Site </h1>
+
+      <div>
+        <button onClick={() => setCurrentPage("sculpture-page")}>Home</button>
+        <button onClick={() => setCurrentPage("sculpture-add")}>Add</button>
+        <button onClick={() => setCurrentPage("sculpture-remove")}>
+          Remove
+        </button>
+      </div>
+
+      {dispatcherPage()}
     </>
   );
 }
