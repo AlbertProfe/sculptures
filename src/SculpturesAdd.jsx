@@ -29,7 +29,7 @@ export default function SculpturesAdd() {
   return (
     <>
       <h2>Add New Sculpture</h2>
-      <h4>Create news sculpture:</h4>
+      <h4>Create new sculpture:</h4>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
