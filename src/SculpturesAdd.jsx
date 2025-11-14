@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sculptureList } from "./data.js";
 
 export default function SculpturesAdd() {
   const [sculpture, setSculpture] = useState({
@@ -9,6 +10,7 @@ export default function SculpturesAdd() {
     alt: "",
     description: "",
   });
+  const [sculptures, setSculptures] = useState(sculptureList);
 
   function handleChange(e) {
     setSculpture({
@@ -21,11 +23,13 @@ export default function SculpturesAdd() {
     e.preventDefault();
     // Here we would normally handle adding the sculpture
     console.log("New Sculpture:", sculpture);
+    setSculptures([...sculptures, sculpture]);
   }
 
   return (
     <>
       <h2>Add New Sculpture</h2>
+      <h4>Create news sculpture:</h4>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
@@ -35,7 +39,8 @@ export default function SculpturesAdd() {
             onChange={handleChange}
             required
           />
-        </label>
+        </label>{" "}
+        <br />
         <label>
           Artist:
           <input
@@ -44,7 +49,8 @@ export default function SculpturesAdd() {
             onChange={handleChange}
             required
           />
-        </label>
+        </label>{" "}
+        <br />
         <label>
           Year:
           <input
@@ -53,15 +59,18 @@ export default function SculpturesAdd() {
             value={sculpture.year}
             onChange={handleChange}
           />
-        </label>
+        </label>{" "}
+        <br />
         <label>
           Image URL:
           <input name="url" value={sculpture.url} onChange={handleChange} />
-        </label>
+        </label>{" "}
+        <br />
         <label>
           Alt Text:
           <input name="alt" value={sculpture.alt} onChange={handleChange} />
-        </label>
+        </label>{" "}
+        <br />
         <label>
           Description:
           <textarea
@@ -69,11 +78,21 @@ export default function SculpturesAdd() {
             value={sculpture.description}
             onChange={handleChange}
           />
-        </label>
+        </label>{" "}
+        <br />
         <button type="submit">Add Sculpture</button>
       </form>
       {sculpture.name} {sculpture.artist} {sculpture.year} {sculpture.url}{" "}
-      {sculpture.alt} {sculpture.description}{" "}
+      {sculpture.alt} {sculpture.description}
+      <h4>Sculptures list:</h4>
+      <ul>
+        {sculptures.map((scul, index) => (
+          <li key={index}>
+            {"#"}
+            {index + 1} {scul.name} by {scul.artist}, {scul.year}{" "}
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

@@ -1,3 +1,3 @@
 export default function SculpturesRemove() {
-  return <>Sculotures Remove ...</>;
+  return <>Sculptures Remove ...</>;
 }
