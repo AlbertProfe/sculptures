@@ -27,7 +27,15 @@ export default function App() {
     <>
       <h1>Sculptures Site </h1>
 
-      <div>
+      <div
+        style={{
+          display: "flex",
+          gap: "1rem",
+          borderBottom: "2px solid #ccc",
+          paddingBottom: "0.5rem",
+          marginBottom: "2rem",
+        }}
+      >
         <button onClick={() => setCurrentPage("sculpture-page")}>Home</button>
         <button onClick={() => setCurrentPage("sculpture-add")}>Add</button>
         <button onClick={() => setCurrentPage("sculpture-remove")}>
