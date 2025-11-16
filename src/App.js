@@ -1,6 +1,7 @@
 import SculpturesPage from "./SculpturesPage";
 import SculptureAdd from "./SculpturesAdd";
 import SculptureRemove from "./SculpturesRemove";
+import SculpturesFilteredByYear from "./SculpturesFilteredByYear";
 import { useState } from "react";
 
 export default function App() {
@@ -14,6 +15,8 @@ export default function App() {
         return <SculptureAdd />;
       case "sculpture-remove":
         return <SculptureRemove />;
+      case "sculptures-filtered-by-year":
+        return <SculpturesFilteredByYear />;
 
       default:
         return <div>Select a page</div>;
@@ -29,6 +32,9 @@ export default function App() {
         <button onClick={() => setCurrentPage("sculpture-add")}>Add</button>
         <button onClick={() => setCurrentPage("sculpture-remove")}>
           Remove
+        </button>
+        <button onClick={() => setCurrentPage("sculptures-filtered-by-year")}>
+          Filter by year
         </button>
       </div>
 
