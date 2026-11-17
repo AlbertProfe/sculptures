@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec6cfa43-7bf8-4eb7-9463-8f90ec86fac0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.codesandbox/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SculpturesAdd.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SculpturesFilteredByYear.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SculpturesPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SculpturesRemove.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" />
+    <list default="true" id="ec6cfa43-7bf8-4eb7-9463-8f90ec86fac0" name="Changes" comment="Remove Vite boilerplate styles and assets&#10;&#10;Delete App.css with hero layout and counter styling, remove template  &#10;images (hero.png, react.svg, vite.svg), and strip index.css globals  &#10;down to minimal base styles.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sculptures/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sculptures/src/assets/hero.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sculptures/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sculptures/src/assets/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sculptures/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,61 +34,61 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.6522683116141343" />
-      <entry key="MS500" value="3.7620322106795143" />
-      <entry key="S2" value="5.21695280935655" />
-      <entry key="S5" value="5.660681647586966" />
-      <entry key="S10" value="5.825561188217101" />
-      <entry key="S30" value="5.9407821872731" />
-      <entry key="S60" value="5.993624809547245" />
-      <entry key="M2" value="6.667479833381554" />
-      <entry key="M5" value="11.502973072203643" />
-      <entry key="M10" value="17.207628636070808" />
-      <entry key="M15" value="20.22973266857272" />
-      <entry key="M30" value="24.082714646848302" />
-      <entry key="H1" value="26.391318213125256" />
-      <entry key="H2" value="27.65578203187275" />
-      <entry key="H4" value="28.317609204469825" />
-      <entry key="D1" value="28.88481283130975" />
-      <entry key="W1" value="28.98350868636875" />
+      <entry key="MS100" value="1.0594915232423767" />
+      <entry key="MS500" value="2.70953569463615" />
+      <entry key="S2" value="5.530463408549557" />
+      <entry key="S5" value="8.213083940524339" />
+      <entry key="S10" value="12.683326014003283" />
+      <entry key="S30" value="22.616805015651995" />
+      <entry key="S60" value="27.46789992853943" />
+      <entry key="M2" value="31.04017486623753" />
+      <entry key="M5" value="37.632991756183806" />
+      <entry key="M10" value="44.046361195093795" />
+      <entry key="M15" value="47.37621417485729" />
+      <entry key="M30" value="51.605414966620074" />
+      <entry key="H1" value="54.13752148940041" />
+      <entry key="H2" value="55.52473364908983" />
+      <entry key="H4" value="56.25099862267414" />
+      <entry key="D1" value="56.873555859031306" />
+      <entry key="W1" value="56.98189668890352" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="MS100" value="1.4112693171413104E-14" />
+      <entry key="MS500" value="0.0016979385939258234" />
+      <entry key="S2" value="0.20299273497563025" />
+      <entry key="S5" value="0.5284357584514688" />
+      <entry key="S10" value="0.7269358695589792" />
+      <entry key="S30" value="0.8991497606274687" />
+      <entry key="S60" value="0.9482350766700568" />
+      <entry key="M2" value="0.9737736270150557" />
+      <entry key="M5" value="0.9894257375270429" />
+      <entry key="M10" value="0.9946988174955488" />
+      <entry key="M15" value="0.9964627484466682" />
+      <entry key="M30" value="0.9982298074324711" />
+      <entry key="H1" value="0.9991145116714459" />
+      <entry key="H2" value="0.9995571577811074" />
+      <entry key="H4" value="0.9997785543714703" />
+      <entry key="D1" value="0.9999630889893557" />
+      <entry key="W1" value="0.999994726915064" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.5864063038348395" />
-      <entry key="MS500" value="3.6870358283553637" />
-      <entry key="S2" value="5.184506494584676" />
-      <entry key="S5" value="5.646087450073388" />
-      <entry key="S10" value="5.81796878776022" />
-      <entry key="S30" value="5.938183142492176" />
-      <entry key="S60" value="5.99231055678984" />
-      <entry key="M2" value="6.666702838992038" />
-      <entry key="M5" value="11.502219502377502" />
-      <entry key="M10" value="17.206956602861947" />
-      <entry key="M15" value="20.229175243837435" />
-      <entry key="M30" value="24.082364363595463" />
-      <entry key="H1" value="26.391121221263138" />
-      <entry key="H2" value="27.65567749502639" />
-      <entry key="H4" value="28.317555347589536" />
-      <entry key="D1" value="28.88480362760939" />
-      <entry key="W1" value="28.983507365889174" />
+      <entry key="MS100" value="0.16722337868908735" />
+      <entry key="MS500" value="2.338709962015502" />
+      <entry key="S2" value="5.432601815513225" />
+      <entry key="S5" value="8.341939348090875" />
+      <entry key="S10" value="13.066522724312826" />
+      <entry key="S30" value="23.340601201087782" />
+      <entry key="S60" value="28.31742964464633" />
+      <entry key="M2" value="31.961365919057737" />
+      <entry key="M5" value="38.60016247409742" />
+      <entry key="M10" value="45.0295000444052" />
+      <entry key="M15" value="48.36482784425509" />
+      <entry key="M30" value="52.5996308848724" />
+      <entry key="H1" value="55.134602426998946" />
+      <entry key="H2" value="56.5232667312387" />
+      <entry key="H4" value="57.25026323142294" />
+      <entry key="D1" value="57.87343301783685" />
+      <entry key="W1" value="57.981879133301064" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -142,11 +134,24 @@
       <updated>1794825004643</updated>
       <workItem from="1794825006882" duration="85000" />
       <workItem from="1794825767463" duration="2520000" />
-      <workItem from="1794900085339" duration="1126000" />
+      <workItem from="1794900085339" duration="6613000" />
     </task>
+    <task id="LOCAL-00001" summary="Migrate React project from CodeSandbox to Vite scaffolding&#10;&#10;Remove root-level files created by CodeSandbox (package.json, src/, public/,  &#10;.gitignore, .codesandbox/, README.md) and add a new Vite-based project under  &#10;the sculptures/ subdirectory with updated dependencies, ESLint config, and  &#10;assets.">
+      <option name="closed" value="true" />
+      <created>1794901466028</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1794901466028</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Migrate React project from CodeSandbox to Vite scaffolding&#10;&#10;Remove root-level files created by CodeSandbox (package.json, src/, public/,  &#10;.gitignore, .codesandbox/, README.md) and add a new Vite-based project under  &#10;the sculptures/ subdirectory with updated dependencies, ESLint config, and  &#10;assets." />
+    <option name="LAST_COMMIT_MESSAGE" value="Migrate React project from CodeSandbox to Vite scaffolding&#10;&#10;Remove root-level files created by CodeSandbox (package.json, src/, public/,  &#10;.gitignore, .codesandbox/, README.md) and add a new Vite-based project under  &#10;the sculptures/ subdirectory with updated dependencies, ESLint config, and  &#10;assets." />
   </component>
 </project>
