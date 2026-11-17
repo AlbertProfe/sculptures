@@ -1,2 +1,0 @@
-# sculptures
-Created with CodeSandbox

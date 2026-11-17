@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec6cfa43-7bf8-4eb7-9463-8f90ec86fac0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.codesandbox/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SculpturesAdd.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SculpturesFilteredByYear.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SculpturesPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SculpturesRemove.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AlbertProfe&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AlbertProfe/sculptures.git&quot;,
+    &quot;accountId&quot;: &quot;1368c1e3-c0bb-42c1-be8c-64f047e2f494&quot;
+  }
+}</component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.6522683116141343" />
+      <entry key="MS500" value="3.7620322106795143" />
+      <entry key="S2" value="5.21695280935655" />
+      <entry key="S5" value="5.660681647586966" />
+      <entry key="S10" value="5.825561188217101" />
+      <entry key="S30" value="5.9407821872731" />
+      <entry key="S60" value="5.993624809547245" />
+      <entry key="M2" value="6.667479833381554" />
+      <entry key="M5" value="11.502973072203643" />
+      <entry key="M10" value="17.207628636070808" />
+      <entry key="M15" value="20.22973266857272" />
+      <entry key="M30" value="24.082714646848302" />
+      <entry key="H1" value="26.391318213125256" />
+      <entry key="H2" value="27.65578203187275" />
+      <entry key="H4" value="28.317609204469825" />
+      <entry key="D1" value="28.88481283130975" />
+      <entry key="W1" value="28.98350868636875" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.5864063038348395" />
+      <entry key="MS500" value="3.6870358283553637" />
+      <entry key="S2" value="5.184506494584676" />
+      <entry key="S5" value="5.646087450073388" />
+      <entry key="S10" value="5.81796878776022" />
+      <entry key="S30" value="5.938183142492176" />
+      <entry key="S60" value="5.99231055678984" />
+      <entry key="M2" value="6.666702838992038" />
+      <entry key="M5" value="11.502219502377502" />
+      <entry key="M10" value="17.206956602861947" />
+      <entry key="M15" value="20.229175243837435" />
+      <entry key="M30" value="24.082364363595463" />
+      <entry key="H1" value="26.391121221263138" />
+      <entry key="H2" value="27.65567749502639" />
+      <entry key="H4" value="28.317555347589536" />
+      <entry key="D1" value="28.88480362760939" />
+      <entry key="W1" value="28.983507365889174" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3MBXbBLhVDNSJrXuevo4NkXKxvv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/albert/MyProjects/ReactProject/sculptures&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/albert/.nvm/versions/node/v22.12.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.runtime&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-WS-263.7307.202" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec6cfa43-7bf8-4eb7-9463-8f90ec86fac0" name="Changes" comment="" />
+      <created>1794825004643</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1794825004643</updated>
+      <workItem from="1794825006882" duration="85000" />
+      <workItem from="1794825767463" duration="2520000" />
+      <workItem from="1794900085339" duration="1126000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
