@@ -3,6 +3,7 @@ import { sculptureList } from "./data.js";
 
 export default function SculpturesPage() {
   const [index, setIndex] = useState(0);
+  const [likes, setLikes] = useState({});
 
   function handleClick() {
     setIndex(index + 1);
@@ -12,6 +13,11 @@ export default function SculpturesPage() {
     setIndex(index - 1);
   }
 
+  function handleLike() {
+    setLikes({ ...likes, [index]: !likes[index] });
+  }
+
+  const isLiked = likes[index] === true;
   const isFirst = index === 0;
   const isLast = index === sculptureList.length - 1;
 
@@ -33,6 +39,8 @@ export default function SculpturesPage() {
         by {sculptureList[index].artist}
       </h2>
       <p>{sculptureList[index].year}</p>
+      <button onClick={handleLike}>{isLiked ? "Unlike" : "Like"}</button>
+      <p>{isLiked ? <strong>You like this sculpture</strong> : "Not liked yet"}</p>
       <img src={sculpture.url} alt={sculpture.alt} />
       <p>{sculpture.description}</p>
     </>
