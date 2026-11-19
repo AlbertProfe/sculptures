@@ -27,15 +27,7 @@ export default function App() {
     <>
       <h1>Sculptures Site </h1>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "1rem",
-          borderBottom: "2px solid #ccc",
-          paddingBottom: "0.5rem",
-          marginBottom: "2rem",
-        }}
-      >
+      <nav>
         <button onClick={() => setCurrentPage("sculpture-page")}>Home</button>
         <button onClick={() => setCurrentPage("sculpture-add")}>Add</button>
         <button onClick={() => setCurrentPage("sculpture-remove")}>
@@ -44,7 +36,7 @@ export default function App() {
         <button onClick={() => setCurrentPage("sculptures-filtered-by-year")}>
           Filter by year
         </button>
-      </div>
+      </nav>
 
       {dispatcherPage()}
     </>

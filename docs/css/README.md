@@ -262,8 +262,7 @@ ul {
 - **No CSS classes** (`className`): styling the tags is enough for this app.
 - **No CSS framework** (Bootstrap, Tailwind...).
 - **No extra files**: the `App.css` that came with the Vite template was deleted because nothing used it.
-
-The menu bar in `App.jsx` has its own small **inline style** (`style={{ display: "flex", gap: "1rem", ... }}`) that puts the buttons in a row with a line under them.
+- **No inline styles**: the menu bar in `App.jsx` is a `<nav>`, styled in `index.css` with the `nav` element selector (`display: flex; gap: 1rem; ...`) that puts the buttons in a row with a line under them.
 
 ---
 
