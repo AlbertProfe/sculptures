@@ -8,12 +8,26 @@ export default function SculpturesPage() {
     setIndex(index + 1);
   }
 
+  function handlePrevious() {
+    setIndex(index - 1);
+  }
+
+  const isFirst = index === 0;
+  const isLast = index === sculptureList.length - 1;
+
   let sculpture = sculptureList[index];
   return (
     <>
       <h2>Sculpures Gallery</h2>
-      <button onClick={handleClick}>Next</button>({index + 1} of{" "}
-      {sculptureList.length})
+      <button onClick={handlePrevious} disabled={isFirst}>
+        Previous
+      </button>{" "}
+      <button onClick={handleClick} disabled={isLast}>
+        Next
+      </button>
+      <p>
+        ({index + 1} of {sculptureList.length})
+      </p>
       <h2>
         <i>{sculptureList[index].name} </i>
         by {sculptureList[index].artist}
