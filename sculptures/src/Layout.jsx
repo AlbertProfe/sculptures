@@ -10,6 +10,7 @@ export default function Layout() {
         <Link to="/add">Add</Link>
         <Link to="/remove">Remove</Link>
         <Link to="/filter-by-year">Filter by year</Link>
+          <Link to="/neon-rest-list">Neon Rest List</Link>
       </nav>
 
       <Outlet />
