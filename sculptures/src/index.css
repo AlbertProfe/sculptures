@@ -50,6 +50,17 @@ nav {
   margin-bottom: 2rem;
 }
 
+button img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+button[aria-current="true"] {
+  outline: 3px solid var(--text-h);
+}
+
 table {
   margin: 0 auto;
 }

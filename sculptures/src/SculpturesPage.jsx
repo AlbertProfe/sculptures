@@ -34,6 +34,18 @@ export default function SculpturesPage() {
       <p>
         ({index + 1} of {sculptureList.length})
       </p>
+      <div>
+        {sculptureList.map((scul, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            aria-current={i === index}
+            title={scul.name}
+          >
+            <img src={scul.url} alt={scul.alt} />
+          </button>
+        ))}
+      </div>
       <h2>
         <i>{sculptureList[index].name} </i>
         by {sculptureList[index].artist}
