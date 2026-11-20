@@ -1,110 +1,87 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { neon } from "./Neon";
 
 const TABLE = "sculptures";
 
-const SculpturesContext = createContext(null);
-
-function toMessage(error) {
-  return error instanceof Error ? error.message : String(error);
-}
-
-// Neon returns { data, error } instead of throwing.
-// Unwrapping it here lets every caller use plain try/catch.
+// Neon returns { data, error } instead of throwing, so unwrap it here.
 function unwrap({ data, error }) {
   if (error) throw new Error(error.message);
   return data;
 }
+
+// API service: only talks to Neon, no React state.
+const SculptureApiService = {
+  getAll: async () => unwrap(await neon.from(TABLE).select("*")) ?? [],
+
+  create: async (sculpture) => {
+    const created = unwrap(
+      await neon.from(TABLE).insert(sculpture).select("*").single(),
+    );
+    if (!created)
+      throw new Error("Neon did not return the inserted sculpture.");
+    return created;
+  },
+
+  remove: async (id) => {
+    if (id == null) throw new Error("Cannot remove a sculpture without an id.");
+    unwrap(await neon.from(TABLE).delete().eq("id", id));
+  },
+};
+
+const SculpturesContext = createContext(null);
 
 export function SculpturesProvider({ children }) {
   const [sculptures, setSculptures] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // Initial load
   useEffect(() => {
     let active = true;
 
-    async function load() {
-      try {
-        const data = unwrap(await neon.from(TABLE).select("*"));
-        if (active) setSculptures(data ?? []);
-      } catch (e) {
-        if (active) {
-          setSculptures([]);
-          setError(toMessage(e));
-        }
-      } finally {
-        if (active) setLoading(false);
-      }
-    }
+    SculptureApiService.getAll()
+      .then((data) => active && setSculptures(data))
+      .catch((e) => active && setError(e.message))
+      .finally(() => active && setLoading(false));
 
-    load();
     return () => {
       active = false;
     };
   }, []);
 
-  // Shared wrapper for writes: clears the previous error, runs the action,
-  // and reports success as a boolean.
-  const runMutation = useCallback(async (action) => {
+  // Runs a write, resets the error and returns true/false for success.
+  async function run(action) {
     setError("");
     try {
       await action();
       return true;
     } catch (e) {
-      setError(toMessage(e));
+      setError(e.message);
       return false;
     }
-  }, []);
+  }
 
-  const addSculpture = useCallback(
-    (sculpture) =>
-      runMutation(async () => {
-        const created = unwrap(
-          await neon.from(TABLE).insert(sculpture).select("*").single(),
-        );
-        if (!created) {
-          throw new Error("Neon did not return the inserted sculpture.");
-        }
-        setSculptures((current) => [...current, created]);
-      }),
-    [runMutation],
-  );
+  const addSculpture = (sculpture) =>
+    run(async () => {
+      const created = await SculptureApiService.create(sculpture);
+      setSculptures((current) => [...current, created]);
+    });
 
-  const removeSculpture = useCallback(
-    (id) =>
-      runMutation(async () => {
-        if (id == null) {
-          throw new Error("Cannot remove a sculpture without a database id.");
-        }
-        unwrap(await neon.from(TABLE).delete().eq("id", id));
-        setSculptures((current) => current.filter((s) => s.id !== id));
-      }),
-    [runMutation],
-  );
-
-  // Memoized so consumers only re-render when something actually changes.
-  const value = useMemo(
-    () => ({ sculptures, loading, error, addSculpture, removeSculpture }),
-    [sculptures, loading, error, addSculpture, removeSculpture],
-  );
+  const removeSculpture = (id) =>
+    run(async () => {
+      await SculptureApiService.remove(id);
+      setSculptures((current) => current.filter((s) => s.id !== id));
+    });
 
   return (
-    <SculpturesContext.Provider value={value}>
+    <SculpturesContext.Provider
+      value={{ sculptures, loading, error, addSculpture, removeSculpture }}
+    >
       {children}
     </SculpturesContext.Provider>
   );
 }
 
-// The provider and its hook intentionally live in the same module.
+// Provider and hook share this file on purpose.
 // eslint-disable-next-line react-refresh/only-export-components
 export function useSculptures() {
   const context = useContext(SculpturesContext);
