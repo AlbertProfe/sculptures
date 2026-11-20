@@ -1,38 +1,35 @@
 import { useState } from "react";
-import { sculptureList } from "./data.js";
+import { useSculptures } from "./SculpturesContext";
 
 export default function SculpturesFilteredByYear() {
   const [year, setYear] = useState("");
-  const [sculptures, setSculptures] = useState(sculptureList);
+  const { sculptures, loading, error } = useSculptures();
 
-  function handleYearChange(e) {
-    setYear(e.target.value);
-    // Filter sculptures by entered year
-    const filtered = sculptureList.filter(
-      (scul) => scul.year && scul.year.toString() === e.target.value
-    );
-    setSculptures(filtered);
-  }
+  const filteredSculptures = year
+    ? sculptures.filter((scul) => String(scul.year) === year)
+    : sculptures;
 
   return (
     <>
       <h2>Filter Sculptures By Year</h2>
+      {loading && <p role="status">Loading sculptures...</p>}
+      {error && <p role="alert">Sculpture request failed: {error}</p>}
       <label>
         Year:
         <input
           type="number"
           value={year}
-          onChange={handleYearChange}
+          onChange={(event) => setYear(event.target.value)}
           placeholder="Enter year"
         />
       </label>
       <h4>Filtered Sculptures list:</h4>
       <ul>
-        {sculptures.length === 0 ? (
+        {filteredSculptures.length === 0 ? (
           <li>No sculptures found for this year.</li>
         ) : (
-          sculptures.map((scul, index) => (
-            <li key={index}>
+          filteredSculptures.map((scul, index) => (
+            <li key={scul.id ?? index}>
               {"#"}
               {index + 1} {scul.name} by {scul.artist}, {scul.year}{" "}
             </li>

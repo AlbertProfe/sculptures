@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { sculptureList } from "./data.js";
+import { useSculptures } from "./SculpturesContext";
 
 export default function SculpturesAdd() {
+  const { sculptures, addSculpture, loading, error } = useSculptures();
   const [sculpture, setSculpture] = useState({
     name: "",
     artist: "",
@@ -10,7 +11,6 @@ export default function SculpturesAdd() {
     alt: "",
     description: "",
   });
-  const [sculptures, setSculptures] = useState(sculptureList);
 
   function handleChange(e) {
     setSculpture({
@@ -19,17 +19,31 @@ export default function SculpturesAdd() {
     });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    // Here we would normally handle adding the sculpture
-    console.log("New Sculpture:", sculpture);
-    setSculptures([...sculptures, sculpture]);
+    const added = await addSculpture({
+      ...sculpture,
+      year: sculpture.year ? Number(sculpture.year) : null,
+    });
+
+    if (added) {
+      setSculpture({
+        name: "",
+        artist: "",
+        year: "",
+        url: "",
+        alt: "",
+        description: "",
+      });
+    }
   }
 
   return (
     <>
       <h2>Add New Sculpture</h2>
       <h4>Create new sculpture:</h4>
+      {loading && <p role="status">Loading sculptures...</p>}
+      {error && <p role="alert">Sculpture request failed: {error}</p>}
       <form onSubmit={handleSubmit}>
         <label>
           Name:
@@ -80,14 +94,14 @@ export default function SculpturesAdd() {
           />
         </label>{" "}
         <br />
-        <button type="submit">Add Sculpture</button>
+        <button type="submit" disabled={loading}>
+          Add Sculpture
+        </button>
       </form>
-      {sculpture.name} {sculpture.artist} {sculpture.year} {sculpture.url}{" "}
-      {sculpture.alt} {sculpture.description}
       <h4>Sculptures list:</h4>
       <ul>
         {sculptures.map((scul, index) => (
-          <li key={index}>
+          <li key={scul.id ?? index}>
             {"#"}
             {index + 1} {scul.name} by {scul.artist}, {scul.year}{" "}
           </li>

@@ -1,6 +1,6 @@
 # Sculptures
 
-A small React app for practicing `useState`, event handling and conditional rendering with a list of sculptures.
+A small React app for browsing and managing sculptures with React Context and Neon.
 
 ## Features
 
@@ -8,9 +8,14 @@ A small React app for practicing `useState`, event handling and conditional rend
 - **Add** (`SculpturesAdd.jsx`): add a new sculpture using a form
 - **Remove** (`SculpturesRemove.jsx`): delete sculptures from the list
 - **Filter by year** (`SculpturesFilteredByYear.jsx`): show sculptures from a given year
-- **Menu tabs** (`App.jsx`): switch between pages with a `useState` dispatcher (no router)
+- **Shared state** (`SculpturesContext.jsx`): loads and updates the list through Neon
+- **Menu** (`App.jsx`): navigate between pages with React Router
 
-Data lives in `src/data.js` (`sculptureList`).
+[View the colorful component tree diagram](./docs/component-tree.html).
+
+The `sculptures` Neon table is the source of truth. The provider starts with an empty
+list and loads the table; it requires an `id` column and columns matching the sculpture
+form fields.
 
 ## Repository structure
 
@@ -29,7 +34,7 @@ sculptures/            ← git root
         ├── main.jsx
         ├── App.jsx
         ├── Sculptures*.jsx
-        └── data.js
+        └── SculpturesContext.jsx
 ```
 
 The docs are kept **outside** the code project on purpose, so the app folder contains only code.
@@ -69,7 +74,7 @@ The project began as a **CodeSandbox** template built on **Create React App** (`
 
 ### What did not change
 
-The application code (`SculpturesPage`, `SculpturesAdd`, `SculpturesRemove`, `SculpturesFilteredByYear`, `data.js`) was moved over **unchanged**. Only `App.js` was renamed to `App.jsx`, because Vite requires JSX to be in `.jsx` files.
+The sculpture UI was moved over and adapted to use a shared React context backed by Neon. `App.js` was renamed to `App.jsx`, because Vite requires JSX to be in `.jsx` files.
 
 ### Why Vite
 
