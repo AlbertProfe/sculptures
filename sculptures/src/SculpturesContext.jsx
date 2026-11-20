@@ -28,8 +28,10 @@ const SculptureApiService = {
   },
 };
 
+// React context: holds state and provides a hook for components to use.
 const SculpturesContext = createContext(null);
 
+// Provider and hook share this file on purpose.
 export function SculpturesProvider({ children }) {
   const [sculptures, setSculptures] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -81,6 +83,8 @@ export function SculpturesProvider({ children }) {
   );
 }
 
+
+// custom hook to access the context. Throws if used outside of provider.
 // Provider and hook share this file on purpose.
 // eslint-disable-next-line react-refresh/only-export-components
 export function useSculptures() {
